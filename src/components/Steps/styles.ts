@@ -68,4 +68,9 @@ export const StepStatusIndicator = styled.div<StepStatusIndicatorProps>`
             border: none;
             color: ${colors.MarineBlue};
         `};
+
+    @media ${devices.sm} {
+        height: 30px;
+        width: 30px;
+    }
 `;
