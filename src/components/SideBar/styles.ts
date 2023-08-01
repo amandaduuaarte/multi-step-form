@@ -15,5 +15,6 @@ export const Container = styled.div`
         flex-direction: row;
         justify-content: center;
         padding: 12px;
+        background: none;
     }
 `;

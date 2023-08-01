@@ -1,6 +1,8 @@
 import { styled } from "styled-components";
+
 import colors from "../../styles/colors";
 import devices from "../../constants/devices";
+import BackgoundSideBar from "../../assets/images/bg-sidebar-mobile.svg";
 
 export const Container = styled.div`
     background: ${colors.white};
@@ -15,6 +17,12 @@ export const Container = styled.div`
     @media ${devices.sm} {
         display: flex;
         flex-direction: row;
-        background: red;
+        background-image: url(${BackgoundSideBar});
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 50%;
+        border-radius: 0;
+        align-items: center;
+        justify-content: center;
     }
 `;
