@@ -1,10 +1,14 @@
 import React from "react";
 
+import Form from "./pages/Form";
+import GlobalStyle from "./styles/globalStyles";
+
 function App() {
     return (
-        <div className="App">
-            <header className="App-header" />
-        </div>
+        <>
+            <GlobalStyle />
+            <Form />
+        </>
     );
 }
 
