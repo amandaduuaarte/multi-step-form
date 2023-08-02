@@ -1,23 +1,34 @@
 import React from "react";
-import { Controller, FieldError } from "react-hook-form";
+import { Controller, FieldError, Control } from "react-hook-form";
 
-import { Container, Input, Label } from "./styles";
+import { Container, ErrorWrapper, Input, Label, TextContainer } from "./styles";
 
 interface TextFieldProps {
     name: string;
-    control: any;
+    control: Control;
     label?: string;
     placeholder?: string;
+    error?: FieldError;
 }
-function TextField({ name, control, label, placeholder }: TextFieldProps) {
+function TextField({
+    name,
+    control,
+    label,
+    placeholder,
+    error,
+}: TextFieldProps) {
     return (
         <Controller
             name={name}
             control={control}
             render={({ field: { onChange, value, ref } }) => (
                 <Container>
-                    <Label>{label}</Label>
+                    <TextContainer>
+                        <Label>{label}</Label>
+                        {error && <ErrorWrapper>{error.message}</ErrorWrapper>}
+                    </TextContainer>
                     <Input
+                        isInvalid={!!error}
                         ref={ref}
                         onChange={onChange}
                         value={value}
