@@ -8,7 +8,6 @@ export const Container = styled.div`
     display: flex;
     height: 64px;
     width: 80%;
-    margin: 10%;
     flex-direction: column;
     justify-content: space-between;
 `;
@@ -23,7 +22,7 @@ export const TextContainer = styled.div`
 export const Label = styled.label`
     font-weight: 500;
     font-size: 16px;
-    color: ${colors.PurplishBlue};
+    color: ${colors.MarineBlue};
     align-self: flex-end;
 `;
 
