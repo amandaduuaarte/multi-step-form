@@ -10,7 +10,7 @@ export const Container = styled.div`
     height: 80vh;
     width: 55vw;
     border-radius: 16px;
-    padding: 16px;
+    padding: 32px 16px 16px 16px;
     display: grid;
     grid-template-columns: 300px 70%;
 
