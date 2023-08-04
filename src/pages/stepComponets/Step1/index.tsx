@@ -8,8 +8,8 @@ import {
     ContentInputs,
     ContentButton,
 } from "./styles";
-import TextField from "../../components/TextField";
-import Button from "../../components/Button";
+import TextField from "../../../components/TextField";
+import Button from "../../../components/Button";
 
 function Step1() {
     const { control, handleSubmit } = useForm();
