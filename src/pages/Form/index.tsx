@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./styles";
 import SideBar from "../../components/SideBar";
-import Step1 from "../stepComponets/Step1";
+import Step1 from "../stepComponets";
 
 function Form() {
     return (
