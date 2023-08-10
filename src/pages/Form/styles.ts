@@ -13,9 +13,16 @@ export const Container = styled.div`
     grid-template-rows: 80vh;
 
     @media ${devices.md} {
-        grid-template-rows: 40vh 60vh;
+        grid-template-rows: 30vh 50vh;
         grid-template-columns: 101vw;
         background: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @media ${devices.sm} {
+        grid-template-rows: 30vh 80vh;
+        grid-template-columns: 101vw;
         margin: 0;
         padding: 0;
     }
