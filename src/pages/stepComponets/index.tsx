@@ -11,13 +11,13 @@ import {
     ContainerButtons,
     MonthSelectContainer,
 } from "./styles";
-import TextField from "../../../components/TextField";
-import Button from "../../../components/Button";
-import PlanCard from "../../../components/PlanCard";
-import ArcadeIcon from "../../../assets/images/icon-arcade.svg";
-import AdvancedIcon from "../../../assets/images/icon-advanced.svg";
-import ProIcon from "../../../assets/images/icon-pro.svg";
-import MonthSelect from "../../../components/MonthSelect";
+import TextField from "../../components/TextField";
+import Button from "../../components/Button";
+import PlanCard from "../../components/PlanCard";
+import ArcadeIcon from "../../assets/images/icon-arcade.svg";
+import AdvancedIcon from "../../assets/images/icon-advanced.svg";
+import ProIcon from "../../assets/images/icon-pro.svg";
+import MonthSelect from "../../components/MonthSelect";
 
 interface SptepsProps {
     status: number;
