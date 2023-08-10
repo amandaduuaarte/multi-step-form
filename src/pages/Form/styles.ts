@@ -6,18 +6,15 @@ import devices from "../../constants/devices";
 export const Container = styled.div`
     background: ${colors.white};
     margin: 5% 0;
-    height: 80vh;
-    width: 70vw;
     border-radius: 16px;
     padding: 32px 16px 16px 16px;
     display: grid;
-    grid-template-columns: 300px 80%;
+    grid-template-columns: 300px 50vw;
+    grid-template-rows: 80vh;
 
     @media ${devices.md} {
-        height: 100vh;
-        width: 100vw;
-        grid-template-rows: 30% 70%;
-        grid-template-columns: 100%;
+        grid-template-rows: 40vh 60vh;
+        grid-template-columns: 101vw;
         background: none;
         margin: 0;
         padding: 0;
