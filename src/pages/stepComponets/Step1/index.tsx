@@ -96,9 +96,9 @@ function Step1({ status }: SptepsProps) {
                                     handleSelectedItem={setIsSelected}
                                 />
                             ))}
-                            {/* <MonthSelectContainer>
+                            <MonthSelectContainer>
                                 <MonthSelect />
-                            </MonthSelectContainer> */}
+                            </MonthSelectContainer>
                         </Row>
                     </>
                 )}

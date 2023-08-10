@@ -30,6 +30,12 @@ export const Container = styled.div<ContainerProps>`
         grid-template-rows: 3vh 3vh;
         grid-template-columns: 5vw 10vw 8vw;
     }
+
+    @media ${devices.md} {
+        width: 60vw;
+        grid-template-rows: 3vh 3vh;
+        grid-template-columns: 5vw 8vw 8vw;
+    }
 `;
 
 export const IconContainer = styled.div`

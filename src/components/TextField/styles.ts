@@ -10,6 +10,7 @@ export const Container = styled.div`
     width: 80%;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 20px;
 `;
 
 export const TextContainer = styled.div`

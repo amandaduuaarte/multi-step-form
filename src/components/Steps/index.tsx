@@ -21,7 +21,7 @@ function Steps({ status, title, isActive }: StepsProps) {
             </StepStatusIndicator>
 
             <Content>
-                <StepStatusText> STEP {status}</StepStatusText>
+                <StepStatusText>STEP {status}</StepStatusText>
                 <StepTitleText>{title}</StepTitleText>
             </Content>
         </Container>

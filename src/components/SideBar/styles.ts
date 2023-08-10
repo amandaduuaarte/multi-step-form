@@ -11,6 +11,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding: 24px;
+    grid-column: 1;
+    grid-row: 1 2;
 
     @media ${devices.md} {
         display: flex;
@@ -18,9 +20,8 @@ export const Container = styled.div`
         background-image: url(${BackgoundSideBarMobile});
         background-repeat: no-repeat;
         background-size: cover;
-        height: 50%;
+        grid-row: 1;
         border-radius: 0;
-        align-items: center;
         justify-content: center;
     }
 `;

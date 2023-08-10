@@ -3,11 +3,11 @@ import colors from "../../../styles/colors";
 import devices from "../../../constants/devices";
 
 export const Container = styled.div`
+    grid-row: 1;
+    grid-column: 2;
     display: grid;
-    flex-direction: column;
     grid-template-columns: 50vw;
     grid-template-rows: 40vh 30vh;
-    padding: 32px;
     margin-left: 10%;
     align-items: center;
     justify-content: center;
@@ -20,6 +20,8 @@ export const Container = styled.div`
         align-items: center;
         grid-template-columns: 100vw;
         grid-template-rows: 20vh 30vh;
+        grid-row: 2;
+        grid-column: 1;
     }
 `;
 
@@ -31,7 +33,8 @@ export const Content = styled.div`
         background: ${colors.white};
         border: 1px solid ${colors.white};
         border-radius: 16px;
-        height: 45vh;
+        grid-row: 1;
+        height: 70vh;
     }
 `;
 
@@ -65,12 +68,13 @@ export const ContentInputs = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 85%;
+    margin-top: 5%;
     width: 80%;
+    height: 25vh;
 
     @media ${devices.md} {
         align-items: center;
-        height: 60%;
+        height: 30vh;
         width: 100%;
         margin: 0;
         padding: 0;
@@ -88,6 +92,7 @@ export const ContainerButtons = styled.div`
         grid-column: 1 2;
         width: 100vw;
         grid-row: 3;
+        background: ${colors.white};
     }
 `;
 
@@ -98,9 +103,8 @@ export const ContentButton = styled.div`
     margin-top: 20%;
 
     @media ${devices.md} {
-        background: ${colors.white};
         align-items: center;
-        margin: 30px 0 0 0;
+        margin: 0;
         padding: 32px;
         width: 100vw;
         align-self: flex-end;
@@ -111,10 +115,8 @@ export const Row = styled.div`
     display: flex;
     justify-content: space-around;
     width: 80%;
-    margin-top: 10%;
+    margin-top: 5%;
     flex-wrap: wrap;
-    grid-column: 1;
-    grid-row: 1;
 
     @media ${devices.md} {
         flex-direction: column;

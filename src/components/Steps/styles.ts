@@ -9,6 +9,10 @@ interface StepStatusIndicatorProps {
 export const Container = styled.div`
     display: flex;
     padding: 24px 0;
+
+    @media ${devices.md} {
+        justify-content: center;
+    }
 `;
 
 export const Content = styled.div`
@@ -31,6 +35,7 @@ export const StepStatusText = styled.p`
 
     @media ${devices.sm} {
         display: none;
+        font-size: 8px;
     }
 `;
 
@@ -43,6 +48,9 @@ export const StepTitleText = styled.p`
 
     @media ${devices.sm} {
         display: none;
+    }
+    @media ${devices.md} {
+        font-size: 12px;
     }
 `;
 
