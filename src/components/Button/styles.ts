@@ -6,7 +6,6 @@ interface ButtonProps {
 }
 export const Container = styled.div`
     display: flex;
-    cursor: pointer;
 `;
 
 export const ButtonComponent = styled.button<ButtonProps>`
@@ -20,4 +19,5 @@ export const ButtonComponent = styled.button<ButtonProps>`
         isSecondary ? colors.MarineBlue : colors.Alabaster};
     font-size: 16px;
     font-weight: 400;
+    cursor: pointer;
 `;

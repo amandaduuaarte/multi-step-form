@@ -16,6 +16,8 @@ export const Container = styled.div`
         margin: 0;
         background: ${colors.Alabaster};
         align-items: center;
+        align-self: center;
+        width: 100%;
     }
 `;
 
@@ -24,4 +26,14 @@ export const Content = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 90%;
+
+    @media ${devices.md} {
+        flex-direction: column;
+        align-items: center;
+        background: ${colors.white};
+        border: 1px solid ${colors.white};
+        border-radius: 16px;
+        height: 80%;
+        width: 100%;
+    }
 `;
