@@ -6,8 +6,9 @@ export const Container = styled.div`
     grid-row: 1;
     grid-column: 2;
     display: grid;
+    height: 80vh;
     grid-template-columns: 50vw;
-    grid-template-rows: 40vh 30vh;
+    grid-template-rows: 10vh 40vh 30vh;
     margin-left: 10%;
     align-items: center;
     justify-content: center;
@@ -16,7 +17,8 @@ export const Container = styled.div`
     @media ${devices.md} {
         padding: 0;
         margin: 0;
-        background: ${colors.Alabaster};
+        width: 100vw;
+        height: 75vh;
         align-items: center;
         grid-template-columns: 100vw;
         grid-template-rows: 20vh 30vh;
@@ -27,14 +29,14 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
 
     @media ${devices.md} {
         background: ${colors.white};
         border: 1px solid ${colors.white};
         border-radius: 16px;
         grid-row: 1;
-        height: 70vh;
+        height: 60vh;
     }
 `;
 
@@ -55,7 +57,7 @@ export const Description = styled.p`
     font-weight: 400;
     color: ${colors.CoolGray};
     align-self: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     width: 64%;
 
     @media ${devices.md} {
@@ -71,6 +73,7 @@ export const ContentInputs = styled.div`
     margin-top: 5%;
     width: 80%;
     height: 25vh;
+    align-items: center;
 
     @media ${devices.md} {
         align-items: center;
@@ -83,13 +86,13 @@ export const ContentInputs = styled.div`
 
 export const ContainerButtons = styled.div`
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 3;
     display: flex;
     justify-content: space-between;
     width: 80%;
 
     @media ${devices.md} {
-        grid-column: 1 2;
+        grid-column: 1/2;
         width: 100vw;
         grid-row: 3;
         background: ${colors.white};
@@ -103,11 +106,11 @@ export const ContentButton = styled.div`
     margin-top: 20%;
 
     @media ${devices.md} {
+        justify-content: space-between;
         align-items: center;
         margin: 0;
         padding: 32px;
         width: 100vw;
-        align-self: flex-end;
     }
 `;
 
@@ -117,6 +120,7 @@ export const Row = styled.div`
     width: 80%;
     margin-top: 5%;
     flex-wrap: wrap;
+    align-items: center;
 
     @media ${devices.md} {
         flex-direction: column;
@@ -138,5 +142,25 @@ export const MonthSelectContainer = styled.div`
 
     @media ${devices.md} {
         margin: 0;
+    }
+`;
+
+export const CheckboxContainer = styled.div`
+    width: 80%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media ${devices.md} {
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        margin-top: 0;
+    }
+    @media ${devices.lg} {
+        flex-direction: column;
+        align-items: center;
     }
 `;

@@ -10,6 +10,7 @@ import {
     Row,
     ContainerButtons,
     MonthSelectContainer,
+    CheckboxContainer,
 } from "./styles";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
@@ -18,6 +19,7 @@ import ArcadeIcon from "../../assets/images/icon-arcade.svg";
 import AdvancedIcon from "../../assets/images/icon-advanced.svg";
 import ProIcon from "../../assets/images/icon-pro.svg";
 import MonthSelect from "../../components/MonthSelect";
+import Checkbox from "../../components/Checkbox";
 
 interface SptepsProps {
     status: number;
@@ -100,6 +102,32 @@ function Step1({ status }: SptepsProps) {
                                 <MonthSelect />
                             </MonthSelectContainer>
                         </Row>
+                    </>
+                )}
+
+                {status === 3 && (
+                    <>
+                        <Title>Pick add-ons</Title>
+                        <Description>
+                            Add-ons help enhance your gaming experience.
+                        </Description>
+                        <CheckboxContainer>
+                            <Checkbox
+                                title="Online service"
+                                description="Access to multiplayer games"
+                                price={1}
+                            />
+                            <Checkbox
+                                title="Online service"
+                                description="Access to multiplayer games"
+                                price={1}
+                            />
+                            <Checkbox
+                                title="Online service"
+                                description="Access to multiplayer games"
+                                price={1}
+                            />
+                        </CheckboxContainer>
                     </>
                 )}
             </Content>

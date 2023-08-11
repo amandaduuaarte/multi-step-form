@@ -7,7 +7,7 @@ function Form() {
     return (
         <Container>
             <SideBar />
-            <Step1 status={2} />
+            <Step1 status={3} />
         </Container>
     );
 }
