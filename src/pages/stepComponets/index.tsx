@@ -20,6 +20,7 @@ import AdvancedIcon from "../../assets/images/icon-advanced.svg";
 import ProIcon from "../../assets/images/icon-pro.svg";
 import MonthSelect from "../../components/MonthSelect";
 import Checkbox from "../../components/Checkbox";
+import CheckoutReview from "../../components/CheckoutReview";
 
 interface SptepsProps {
     status: number;
@@ -113,6 +114,7 @@ function Step1({ status }: SptepsProps) {
                         </Description>
                         <CheckboxContainer>
                             <Checkbox
+                                isSelected
                                 title="Online service"
                                 description="Access to multiplayer games"
                                 price={1}
@@ -130,6 +132,16 @@ function Step1({ status }: SptepsProps) {
                         </CheckboxContainer>
                     </>
                 )}
+
+                {status === 4 && (
+                    <>
+                        <Title>Finishing up</Title>
+                        <Description>
+                            Double-check everything looks OK before confirming.
+                        </Description>
+                        <CheckoutReview />
+                    </>
+                )}
             </Content>
 
             <ContainerButtons>
@@ -145,7 +157,7 @@ function Step1({ status }: SptepsProps) {
 
                 <ContentButton>
                     <Button
-                        label="Next Step"
+                        label={status !== 4 ? "Next Step" : "Confirm"}
                         onClickEvent={handleSubmit(handleForm)}
                     />
                 </ContentButton>

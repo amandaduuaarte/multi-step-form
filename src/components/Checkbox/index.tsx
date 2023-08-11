@@ -12,10 +12,11 @@ interface CheckboxProps {
     title: string;
     description: string;
     price: number;
+    isSelected?: boolean;
 }
-function Checkbox({ title, description, price }: CheckboxProps) {
+function Checkbox({ title, description, price, isSelected }: CheckboxProps) {
     return (
-        <Container>
+        <Container isSelected={isSelected}>
             <InputCheckbox type="checkbox" />
             <ContainerDescriptions>
                 <Title>{title}</Title>
