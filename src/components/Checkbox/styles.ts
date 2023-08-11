@@ -2,14 +2,21 @@ import { styled } from "styled-components";
 import colors from "../../styles/colors";
 import devices from "../../constants/devices";
 
-export const Container = styled.div`
+interface CheckboxProps {
+    isSelected?: boolean;
+}
+export const Container = styled.div<CheckboxProps>`
     width: 30vw;
     height: 10vh;
     border-radius: 8px;
-    border: 1px solid ${colors.LightGray};
+    border: 1px solid
+        ${({ isSelected }) =>
+            isSelected ? colors.PurplishBlue : colors.LightGray};
     display: grid;
     grid-template-columns: 4vw 20vw 2vw;
     grid-template-rows: 3vh 4vh;
+    background: ${({ isSelected }) =>
+        isSelected ? colors.Magnolia : colors.white};
 
     cursor: pointer;
     &:hover {
