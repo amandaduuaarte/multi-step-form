@@ -13,9 +13,9 @@ export const Container = styled.div`
     grid-template-rows: 80vh;
 
     @media ${devices.md} {
+        background: ${colors.Magnolia};
         grid-template-rows: 30vh 50vh;
         grid-template-columns: 101vw;
-        background: none;
         margin: 0;
         padding: 0;
     }
