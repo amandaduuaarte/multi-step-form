@@ -26,6 +26,7 @@ import { useFormStep } from "../../hooks/useFormStep";
 
 import Adds from "../../constants/mocks/Adds.json";
 import { Plans } from "../../constants/mocks/Plans.js";
+import Finish from "../../components/Finish";
 
 interface SptepsProps {
     status: number;
@@ -36,12 +37,15 @@ interface HeaderProps {
 }
 
 interface FirstStepForm {
+    step: number;
     name: string;
     email: string;
     phone: string;
 }
 
 function Step({ status }: SptepsProps) {
+    const { handleNextStep, handleBeforeStep, step } = useFormStep();
+
     const schema = yup.object().shape({
         name: yup.string().required("Name must be informed."),
         email: yup.string().email().required("Email must be informed."),
@@ -54,10 +58,8 @@ function Step({ status }: SptepsProps) {
     } = useForm<any>({
         resolver: yupResolver(schema),
     });
-    const { handleNextStep, handleBeforeStep } = useFormStep();
 
     const handleForm = (data: FirstStepForm) => {
-        console.log(data);
         handleNextStep();
     };
 
@@ -149,6 +151,8 @@ function Step({ status }: SptepsProps) {
                         <CheckboxContainer>
                             {Adds.adds.map((add) => (
                                 <Checkbox
+                                    name="adds"
+                                    control={control}
                                     isSelected
                                     title={add.title}
                                     description={add.description}
@@ -169,25 +173,30 @@ function Step({ status }: SptepsProps) {
                         <CheckoutReview />
                     </>
                 )}
+                {status === 5 && <Finish />}
             </Content>
 
             <ContainerButtons>
-                <ContentButton>
-                    {status > 1 && (
-                        <Button
-                            secondaryBottom
-                            label="Go Back"
-                            onClickEvent={() => backForm()}
-                        />
-                    )}
-                </ContentButton>
+                {status !== 5 && (
+                    <>
+                        <ContentButton>
+                            {status > 1 && (
+                                <Button
+                                    secondaryBottom
+                                    label="Go Back"
+                                    onClickEvent={() => backForm()}
+                                />
+                            )}
+                        </ContentButton>
 
-                <ContentButton>
-                    <Button
-                        label={status !== 4 ? "Next Step" : "Confirm"}
-                        onClickEvent={handleSubmit(handleForm)}
-                    />
-                </ContentButton>
+                        <ContentButton>
+                            <Button
+                                label={status !== 4 ? "Next Step" : "Confirm"}
+                                onClickEvent={handleSubmit(handleForm)}
+                            />
+                        </ContentButton>
+                    </>
+                )}
             </ContainerButtons>
         </Container>
     );
