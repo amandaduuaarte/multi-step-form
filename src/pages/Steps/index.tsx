@@ -1,5 +1,8 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 import {
     Container,
     Content,
@@ -15,13 +18,14 @@ import {
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
 import PlanCard from "../../components/PlanCard";
-import ArcadeIcon from "../../assets/images/icon-arcade.svg";
-import AdvancedIcon from "../../assets/images/icon-advanced.svg";
-import ProIcon from "../../assets/images/icon-pro.svg";
+
 import MonthSelect from "../../components/MonthSelect";
 import Checkbox from "../../components/Checkbox";
 import CheckoutReview from "../../components/CheckoutReview";
 import { useFormStep } from "../../hooks/useFormStep";
+
+import Adds from "../../constants/mocks/Adds.json";
+import { Plans } from "../../constants/mocks/Plans.js";
 
 interface SptepsProps {
     status: number;
@@ -31,38 +35,35 @@ interface HeaderProps {
     description: string;
 }
 
+interface FirstStepForm {
+    name: string;
+    email: string;
+    phone: string;
+}
+
 function Step({ status }: SptepsProps) {
-    const { control, handleSubmit } = useForm();
+    const schema = yup.object().shape({
+        name: yup.string().required("Name must be informed."),
+        email: yup.string().email().required("Email must be informed."),
+        phone: yup.string().min(8).required("Phone must be informed."),
+    });
+    const {
+        control,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<any>({
+        resolver: yupResolver(schema),
+    });
     const { handleNextStep, handleBeforeStep } = useFormStep();
 
-    const handleForm = useCallback(
-        (data: any) => {
-            handleNextStep();
-        },
-        [handleNextStep]
-    );
+    const handleForm = (data: FirstStepForm) => {
+        console.log(data);
+        handleNextStep();
+    };
 
     const backForm = () => {
         handleBeforeStep();
     };
-    const [isSelected, setIsSelected] = useState(false);
-    const mockPlans = [
-        {
-            icon: ArcadeIcon,
-            title: "Arcade",
-            price: 9,
-        },
-        {
-            icon: AdvancedIcon,
-            title: "Advanced",
-            price: 12,
-        },
-        {
-            icon: ProIcon,
-            title: "Pro",
-            price: 15,
-        },
-    ];
 
     const renderHeader = ({ title, description }: HeaderProps): JSX.Element => {
         return (
@@ -89,18 +90,21 @@ function Step({ status }: SptepsProps) {
                                 name="name"
                                 label="Name"
                                 placeholder="e.g Stephen King"
+                                error={errors?.name}
                             />
                             <TextField
                                 control={control}
                                 name="email"
                                 label="Email Address"
                                 placeholder="e.g stephenKing@lorem.com"
+                                error={errors?.email}
                             />
                             <TextField
                                 control={control}
                                 name="phone"
                                 label="Phone Number"
                                 placeholder="e.g +1 234 567 890"
+                                error={errors?.phone}
                             />
                         </ContentInputs>
                     </>
@@ -114,12 +118,17 @@ function Step({ status }: SptepsProps) {
                                 "You have the option of monthly or yearly billing.",
                         })}
                         <Row>
-                            {mockPlans.map((plan) => (
+                            {Plans.plans.map((plan) => (
                                 <PlanCard
-                                    iconUrl={plan.icon}
+                                    control={control}
+                                    name="plan"
+                                    key={plan.id}
+                                    iconUrl={plan.cover}
                                     title={plan.title}
                                     price={plan.price}
-                                    handleSelectedItem={setIsSelected}
+                                    handleSelectedItem={() =>
+                                        console.log("console")
+                                    }
                                 />
                             ))}
                             <MonthSelectContainer>
@@ -138,22 +147,14 @@ function Step({ status }: SptepsProps) {
                         })}
 
                         <CheckboxContainer>
-                            <Checkbox
-                                isSelected
-                                title="Online service"
-                                description="Access to multiplayer games"
-                                price={1}
-                            />
-                            <Checkbox
-                                title="Online service"
-                                description="Access to multiplayer games"
-                                price={1}
-                            />
-                            <Checkbox
-                                title="Online service"
-                                description="Access to multiplayer games"
-                                price={1}
-                            />
+                            {Adds.adds.map((add) => (
+                                <Checkbox
+                                    isSelected
+                                    title={add.title}
+                                    description={add.description}
+                                    price={add.price}
+                                />
+                            ))}
                         </CheckboxContainer>
                     </>
                 )}

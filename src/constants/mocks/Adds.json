@@ -1,0 +1,22 @@
+{
+    "adds": [
+        {
+            "id": 1,
+            "description": "Add-os help enhance your gaming experience",
+            "title": "Online service",
+            "price": 1
+        },
+        {
+            "id": 2,
+            "description": "Extra 1TB of cloud save",
+            "title": "Larger storage",
+            "price": 2
+        },
+        {
+            "id": 3,
+            "description": "Custom theme on your profile",
+            "title": "Customizable Profile",
+            "price": 2
+        }
+    ]
+}

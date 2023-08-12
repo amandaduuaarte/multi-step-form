@@ -35,6 +35,7 @@ function SideBar({ status }: StepProps) {
             isActive: status === 4,
         },
     ];
+
     return (
         <Container>
             {stepsMock.map((step) => (

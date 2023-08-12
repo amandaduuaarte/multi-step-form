@@ -42,7 +42,7 @@ export const Input = styled.input<InputProps>`
 `;
 
 export const ErrorWrapper = styled.label`
-    font-weight: 700;
+    font-weight: 500;
     color: ${colors.StrawberryRed};
     font-size: 16px;
     align-self: flex-end;
