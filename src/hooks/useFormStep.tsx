@@ -17,11 +17,7 @@ const FormStepProvider: React.FC<FormStepProviderProps> = ({ children }) => {
     const [step, setStep] = useState<number>(1);
 
     const handleNextStep = (): void => {
-        if (step === 4) {
-            setStep(1);
-        } else {
-            setStep(step + 1);
-        }
+        setStep(step + 1);
     };
     const handleBeforeStep = (): void => {
         setStep(step - 1);

@@ -1,4 +1,5 @@
 import React from "react";
+import { Control, Controller } from "react-hook-form";
 import {
     Container,
     InputCheckbox,
@@ -13,17 +14,37 @@ interface CheckboxProps {
     description: string;
     price: number;
     isSelected?: boolean;
+    name: string;
+    control: Control;
 }
-function Checkbox({ title, description, price, isSelected }: CheckboxProps) {
+function Checkbox({
+    title,
+    description,
+    price,
+    isSelected,
+    name,
+    control,
+}: CheckboxProps) {
     return (
-        <Container isSelected={isSelected}>
-            <InputCheckbox type="checkbox" />
-            <ContainerDescriptions>
-                <Title>{title}</Title>
-                <Description>{description}</Description>
-            </ContainerDescriptions>
-            <Price>+${price}/mo</Price>
-        </Container>
+        <Controller
+            name={name}
+            control={control}
+            render={({ field: { onChange, value, ref } }) => (
+                <Container isSelected={isSelected}>
+                    <InputCheckbox
+                        ref={ref}
+                        type="checkbox"
+                        value={value}
+                        onChange={onChange}
+                    />
+                    <ContainerDescriptions>
+                        <Title>{title}</Title>
+                        <Description>{description}</Description>
+                    </ContainerDescriptions>
+                    <Price>+${price}/mo</Price>
+                </Container>
+            )}
+        />
     );
 }
 
