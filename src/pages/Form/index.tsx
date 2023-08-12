@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "./styles";
 import SideBar from "../../components/SideBar";
-import Step1 from "../stepComponets";
+import Steps from "../Steps";
 
 function Form() {
+    const [step, setStep] = useState(1);
+
     return (
         <Container>
-            <SideBar />
-            <Step1 status={4} />
+            <SideBar status={step} />
+            <Steps setStatus={setStep} status={step} />
         </Container>
     );
 }

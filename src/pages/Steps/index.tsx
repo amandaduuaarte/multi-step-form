@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
     Container,
@@ -24,12 +24,27 @@ import CheckoutReview from "../../components/CheckoutReview";
 
 interface SptepsProps {
     status: number;
+    setStatus: (value: number) => void;
 }
-function Step1({ status }: SptepsProps) {
+interface HeaderProps {
+    title: string;
+    description: string;
+}
+
+function Step({ status, setStatus }: SptepsProps) {
+    const [step, setStep] = useState<number>(1);
     const { control, handleSubmit } = useForm();
 
-    const handleForm = (data: any) => {
-        console.log(data);
+    const handleForm = useCallback(
+        (data: any) => {
+            setStatus(step);
+        },
+        [setStatus, step]
+    );
+
+    const backForm = () => {
+        setStep(1);
+        setStatus(step);
     };
     const [isSelected, setIsSelected] = useState(false);
     const mockPlans = [
@@ -50,17 +65,25 @@ function Step1({ status }: SptepsProps) {
         },
     ];
 
+    const renderHeader = ({ title, description }: HeaderProps): JSX.Element => {
+        return (
+            <>
+                <Title>{title}</Title>
+                <Description>{description}</Description>
+            </>
+        );
+    };
+
     return (
         <Container>
             <Content>
                 {status === 1 && (
                     <>
-                        <Title>Personal info</Title>
-                        <Description>
-                            Please provide your name, email, address, and phone
-                            number.
-                        </Description>
-
+                        {renderHeader({
+                            title: "Personal info",
+                            description:
+                                "Please provide your name, email, address, and phone number.",
+                        })}
                         <ContentInputs>
                             <TextField
                                 control={control}
@@ -86,10 +109,11 @@ function Step1({ status }: SptepsProps) {
 
                 {status === 2 && (
                     <>
-                        <Title>Select your plan</Title>
-                        <Description>
-                            You have the option of monthly or yearly billing.
-                        </Description>
+                        {renderHeader({
+                            title: "Select your plan",
+                            description:
+                                "You have the option of monthly or yearly billing.",
+                        })}
                         <Row>
                             {mockPlans.map((plan) => (
                                 <PlanCard
@@ -108,10 +132,12 @@ function Step1({ status }: SptepsProps) {
 
                 {status === 3 && (
                     <>
-                        <Title>Pick add-ons</Title>
-                        <Description>
-                            Add-ons help enhance your gaming experience.
-                        </Description>
+                        {renderHeader({
+                            title: "Pick add-ons",
+                            description:
+                                "Add-ons help enhance your gaming experience.",
+                        })}
+
                         <CheckboxContainer>
                             <Checkbox
                                 isSelected
@@ -135,10 +161,11 @@ function Step1({ status }: SptepsProps) {
 
                 {status === 4 && (
                     <>
-                        <Title>Finishing up</Title>
-                        <Description>
-                            Double-check everything looks OK before confirming.
-                        </Description>
+                        {renderHeader({
+                            title: "Finishing up",
+                            description:
+                                "Double-check everything looks OK before confirming.",
+                        })}
                         <CheckoutReview />
                     </>
                 )}
@@ -150,7 +177,7 @@ function Step1({ status }: SptepsProps) {
                         <Button
                             secondaryBottom
                             label="Go Back"
-                            onClickEvent={handleSubmit(handleForm)}
+                            onClickEvent={console.log("handleForm")}
                         />
                     )}
                 </ContentButton>
@@ -166,4 +193,4 @@ function Step1({ status }: SptepsProps) {
     );
 }
 
-export default Step1;
+export default Step;
