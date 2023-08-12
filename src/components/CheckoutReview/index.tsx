@@ -2,12 +2,27 @@ import React from "react";
 import { Container, Content, Title, Description, Line, Body } from "./styles";
 import colors from "../../styles/colors";
 
-function CheckoutReview() {
+interface CheckoutValues {
+    price: number;
+    plan: string;
+    type: "Monthly" | "Yearly";
+    total: number;
+    services?: any;
+}
+function CheckoutReview({
+    price,
+    plan,
+    type,
+    total,
+    services,
+}: CheckoutValues) {
     return (
         <Container>
             <Body>
                 <Content>
-                    <Title>Arcade (Monthly)</Title>
+                    <Title>
+                        {plan} ({type})
+                    </Title>
                     <Description row={2}>Change</Description>
                     <Description
                         column={4}
@@ -15,7 +30,7 @@ function CheckoutReview() {
                         color={colors.MarineBlue}
                         bold
                     >
-                        +$1/mo
+                        +${price}/mo
                     </Description>
                 </Content>
 
@@ -25,7 +40,7 @@ function CheckoutReview() {
                     <Description>Online service</Description>
                     <Description row={2}>Larger storage</Description>
                     <Description column={4} color={colors.MarineBlue} bold>
-                        +$1/mo
+                        +${price}/mo
                     </Description>
                     <Description
                         row={2}
@@ -33,7 +48,7 @@ function CheckoutReview() {
                         color={colors.MarineBlue}
                         bold
                     >
-                        +$2/mo
+                        +${price}/mo
                     </Description>
                 </Content>
             </Body>
@@ -46,7 +61,7 @@ function CheckoutReview() {
                     bold
                     size={18}
                 >
-                    +$12/mo
+                    +${total}/mo
                 </Description>
             </Content>
         </Container>

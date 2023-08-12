@@ -60,6 +60,7 @@ function Step({ status }: SptepsProps) {
     });
 
     const handleForm = (data: FirstStepForm) => {
+        console.log(data);
         handleNextStep();
     };
 
@@ -153,7 +154,6 @@ function Step({ status }: SptepsProps) {
                                 <Checkbox
                                     name="adds"
                                     control={control}
-                                    isSelected
                                     title={add.title}
                                     description={add.description}
                                     price={add.price}
@@ -170,9 +170,15 @@ function Step({ status }: SptepsProps) {
                             description:
                                 "Double-check everything looks OK before confirming.",
                         })}
-                        <CheckoutReview />
+                        <CheckoutReview
+                            total={12}
+                            type="Yearly"
+                            price={12}
+                            plan="Arcade"
+                        />
                     </>
                 )}
+
                 {status === 5 && <Finish />}
             </Content>
 
