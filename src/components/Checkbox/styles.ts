@@ -7,14 +7,15 @@ interface CheckboxProps {
 }
 export const Container = styled.div<CheckboxProps>`
     width: 30vw;
-    height: 10vh;
+    height: 14vh;
     border-radius: 8px;
     border: 1px solid
         ${({ isSelected }) =>
             isSelected ? colors.PurplishBlue : colors.LightGray};
     display: grid;
-    grid-template-columns: 4vw 20vw 2vw;
-    grid-template-rows: 3vh 4vh;
+    grid-template-columns: 4vw 20vw 4vw;
+    grid-template-rows: 3vh 8vh;
+    margin-bottom: 10px;
     background: ${({ isSelected }) =>
         isSelected ? colors.Magnolia : colors.white};
 
@@ -33,7 +34,8 @@ export const Container = styled.div<CheckboxProps>`
     @media ${devices.md} {
         width: 80vw;
         grid-template-columns: 12vw 55vw 2vw;
-        grid-template-rows: 3vh 4vh;
+        grid-template-rows: 6vh 9vh;
+        margin-bottom: 10px;
     }
 `;
 
@@ -60,7 +62,7 @@ export const ContainerDescriptions = styled.div`
     margin-top: 3%;
 
     @media ${devices.xl} {
-        margin-top: 2%;
+        margin-top: 6%;
     }
 `;
 
