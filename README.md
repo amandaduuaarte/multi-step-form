@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# Multi-Step-Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontend Project - Registration Form
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
 
-### `npm start`
+A simple form consisting of multiple components and divided into several completion steps. This project was undertaken with the aim of enhancing my understanding of `Storybook`, while also creating a visually appealing and well-structured set of components.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🇺🇸 English
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Features
 
-### `npm test`
+- Displays a registration form with fields like name, email, phone, etc.
+- Performs input validation on fields using a validation library(yup).
+- Displays error messages for invalid fields.
+- Responsive interface for different screen sizes.
+- Different types of inputs and steps.
+- Some basic techniques to make the project a little more responsive.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Technologies Used
 
-### `npm run build`
+- React Js
+- Styled-components
+- TypeScript
+- Validation Library (Yup)
+- React-hook-form
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js
+- NPM (package manager)
 
-### `npm run eject`
+  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## How to Get Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- run `yarn start`
+...
+  
+## How to Get Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone this repository: `git clone https://github.com/amandaduuaarte/multi-step-form.git`
+2. Navigate to the project directory: `cd multi-step-form`
+3. Install dependencies: `yarn`
+4. Start the development server: `yarn start`
+5. Access the app in your browser: `http://localhost:3000`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## How to Contribute
 
-## Learn More
+1. Fork this repository.
+2. Create a new branch: `git checkout -b feature/feature-name`
+3. Make your changes and commit: `git commit -m 'Feat: Add new feature'`
+4. Push the changes to your forked repository: `git push origin feature/feature-name`
+5. Create a pull request to this repository.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Created by [Amanda D](https://github.com/amandaduuaarte)
+
+![desktop-preview](https://github.com/amandaduuaarte/multi-step-form/assets/89158507/e2fa7884-da46-482c-81d0-f88b11f201ac)
+The project was based on the Frontend Mentor challenge.
