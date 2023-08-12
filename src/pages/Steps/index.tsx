@@ -21,30 +21,29 @@ import ProIcon from "../../assets/images/icon-pro.svg";
 import MonthSelect from "../../components/MonthSelect";
 import Checkbox from "../../components/Checkbox";
 import CheckoutReview from "../../components/CheckoutReview";
+import { useFormStep } from "../../hooks/useFormStep";
 
 interface SptepsProps {
     status: number;
-    setStatus: (value: number) => void;
 }
 interface HeaderProps {
     title: string;
     description: string;
 }
 
-function Step({ status, setStatus }: SptepsProps) {
-    const [step, setStep] = useState<number>(1);
+function Step({ status }: SptepsProps) {
     const { control, handleSubmit } = useForm();
+    const { handleNextStep, handleBeforeStep } = useFormStep();
 
     const handleForm = useCallback(
         (data: any) => {
-            setStatus(step);
+            handleNextStep();
         },
-        [setStatus, step]
+        [handleNextStep]
     );
 
     const backForm = () => {
-        setStep(1);
-        setStatus(step);
+        handleBeforeStep();
     };
     const [isSelected, setIsSelected] = useState(false);
     const mockPlans = [
@@ -177,7 +176,7 @@ function Step({ status, setStatus }: SptepsProps) {
                         <Button
                             secondaryBottom
                             label="Go Back"
-                            onClickEvent={console.log("handleForm")}
+                            onClickEvent={() => backForm()}
                         />
                     )}
                 </ContentButton>

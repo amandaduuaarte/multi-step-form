@@ -13,15 +13,15 @@ export const Container = styled.div`
     grid-template-rows: 80vh;
 
     @media ${devices.md} {
-        background: ${colors.Magnolia};
-        grid-template-rows: 30vh 50vh;
+        grid-template-rows: 20vh 60vh;
+        row-gap: 16vh;
         grid-template-columns: 101vw;
         margin: 0;
         padding: 0;
     }
 
     @media ${devices.sm} {
-        grid-template-rows: 30vh 80vh;
+        grid-template-rows: 20vh 60vh;
         grid-template-columns: 101vw;
         margin: 0;
         padding: 0;

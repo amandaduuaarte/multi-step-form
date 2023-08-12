@@ -31,6 +31,7 @@ module.exports = {
         "react-hooks/exhaustive-deps": "warn",
         "import/extensions": 0,
         "react/require-default-props": 0,
+        "react/jsx-no-constructed-context-values": 0,
     },
     settings: {
         "import/resolver": {

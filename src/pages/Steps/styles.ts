@@ -21,7 +21,7 @@ export const Container = styled.div`
         height: 75vh;
         align-items: center;
         grid-template-columns: 100vw;
-        grid-template-rows: 20vh 30vh;
+        grid-template-rows: 60vh 30vh;
         grid-row: 2;
         grid-column: 1;
     }
@@ -36,7 +36,7 @@ export const Content = styled.div`
         border: 1px solid ${colors.white};
         border-radius: 16px;
         grid-row: 1;
-        height: 60vh;
+        height: 70vh;
     }
 `;
 
@@ -57,7 +57,7 @@ export const Description = styled.p`
     font-weight: 400;
     color: ${colors.CoolGray};
     align-self: flex-start;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     width: 64%;
 
     @media ${devices.md} {
