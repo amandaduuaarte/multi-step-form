@@ -8,27 +8,31 @@ interface StepMock {
     isActive: boolean;
 }
 
-function SideBar() {
+interface StepProps {
+    status: number;
+}
+
+function SideBar({ status }: StepProps) {
     const stepsMock: StepMock[] = [
         {
             status: 1,
             title: "your info",
-            isActive: true,
+            isActive: status === 1,
         },
         {
             status: 2,
             title: "select plan",
-            isActive: false,
+            isActive: status === 2,
         },
         {
             status: 3,
             title: "add-ons",
-            isActive: false,
+            isActive: status === 3,
         },
         {
             status: 4,
             title: "summary",
-            isActive: false,
+            isActive: status === 4,
         },
     ];
     return (
