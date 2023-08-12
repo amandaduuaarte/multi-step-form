@@ -8,7 +8,7 @@ interface TextFieldProps {
     control: Control;
     label?: string;
     placeholder?: string;
-    error?: FieldError;
+    error?: FieldError | any;
 }
 function TextField({
     name,
