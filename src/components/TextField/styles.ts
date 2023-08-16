@@ -11,6 +11,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
+    font-family: "Ubuntu";
 `;
 
 export const TextContainer = styled.div`

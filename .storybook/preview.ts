@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
-import GlobalStyles from "../src/styles/globalStyles"
+import "../src/styles/global.css";
+import {useForm} from "react-hook-form"
 
 const preview: Preview = {
   parameters: {
