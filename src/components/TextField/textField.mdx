@@ -1,21 +1,35 @@
+{/* TextField.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as TextFieldStories from './textField.stories';
+
+<Meta of={TextFieldStories} />
+
 # TextField
-
-A reusable TextField component for adding interactivity to your UI.
-
-## Functionalities
-    * Triggering actions and events
-
-
-## Variations
-    * Active
-    * Error
+The input component offers two distinct variations that cater to different scenarios: the default
+behavior and an error validation state. These variations provide tailored experiences based on
+the user's input and data validation status.
 
 ## Usage
-    `import { TextField } from 'TextField-component';`
+     `import { TextField } from 'TextField-component';`
 
     `<TextField label="Test" name="test" control={control} placeholder="Test placeholder"/>`
 
     `<TextField label="Test" name="test" control={control} placeholder="Test placeholder" error={message: "errror teste"}/>`
 
-### License
-This component is distributed under the XYZ License. See the LICENSE file for more details.
+In its default behavior, the input component functions as a straightforward element, allowing users to input data without any immediate constraints. This unobtrusive approach offers a seamless interaction, making it
+suitable for general use cases where no specific validation is required.
+<Canvas of={TextFieldStories.Active} />
+
+
+However, the input component becomes especially useful when dealing with data validation. In scenarios where user input needs to adhere to certain criteria, such as correct formatting or specific content requirements, the error validation variation comes into play. This variation highlights any data input that fails to meet the specified validation rules. This could include scenarios where, for instance, an email address is expected to follow a certain
+format or a password must meet certain complexity criteria.
+<Canvas of={TextFieldStories.Error} />
+
+
+{/* Guideline.mdx */}
+
+By dynamically indicating validation errors, the component guides users toward correct input, helping them understand what needs to be adjusted to proceed. This feedback loop ensures that the user's data aligns with the expected standards, preventing potential issues further down the line.
+
+Incorporating these two variations within the input component enhances the user experience by addressing both straightforward input needs and more complex validation scenarios. This flexibility allows the component to seamlessly adapt to a wide range of use cases, ultimately contributing to a more intuitive and user-friendly interface.
