@@ -1,14 +1,16 @@
+{/* Button.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as ButtonStories from './button.stories';
+
+<Meta of={ButtonStories} />
+
 # Button
 
-A reusable button component for adding interactivity to your UI.
+Our button component introduces a versatile solution that adapts seamlessly to varying
+design intentions and user interactions, featuring two distinct variations: Primary and Secondary.
 
-## Functionalities
-    * Triggering actions and events
-
-
-## Variations
-    * Primary
-    * Secondary
 
 ## Usage
     `import { Button } from 'button-component';`
@@ -16,6 +18,18 @@ A reusable button component for adding interactivity to your UI.
     `<Button onClick={handleClick} label="Test"/>`
 
     `<Button onClick={handleClick} secondaryBottom label="Test"/> `
+
+The Primary button variation serves as a focal point, drawing immediate attention to the most important actions. With a bold color scheme and prominent placement, the Primary button is ideal for critical actions like 'Submit,' 'Confirm,' or 'Proceed.' Its commanding presence ensures that users can swiftly
+identify and engage with the primary goal of the interface.
+    <Canvas of={ButtonStories.Primary} />
+Conversely, the Secondary button variation embodies a subtler approach, suitable for secondary or alternative actions. By utilizing a muted color palette and slightly less pronounced styling, the Secondary button harmoniously complements the Primary button without competing for attention. This variation is perfect for actions such as 'Cancel,' 'Back,' or 'Dismiss,'
+offering users a clear way to step back from their current context.
+     <Canvas of={ButtonStories.Secondary} />
+The coexistence of both variations empowers designers and developers to create nuanced and well-balanced user interfaces. Whether guiding users through a high-stakes process or providing options for different paths, the Primary and Secondary button variations enhance the overall user experience by guiding interactions in alignment with their importance.
+
+By thoughtfully integrating the Primary and Secondary button variations, our button component
+ensures a cohesive visual hierarchy while accommodating the diverse spectrum of actions users may take. This flexibility enhances clarity, engagement, and user satisfaction,
+ultimately contributing to a more effective and engaging user interface.
 
 ### License
 This component is distributed under the XYZ License. See the LICENSE file for more details.

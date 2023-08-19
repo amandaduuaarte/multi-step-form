@@ -8,6 +8,16 @@ export default {
         label: "Default",
         name: "Default",
         placeholder: "Default Placeholder",
+        value: "Default",
+    },
+    parameters: {
+        docs: {
+            description: {
+                component:
+                    "A TextField component is used for capturing user input...",
+            },
+            notes: "Make sure to handle input validation and errors properly...",
+        },
     },
 } as Meta;
 
