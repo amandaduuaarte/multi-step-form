@@ -25,6 +25,7 @@ A simple form consisting of multiple components and divided into several complet
 - TypeScript
 - Validation Library (Yup)
 - React-hook-form
+- Storybook
 
 
 ## Prerequisites
@@ -61,3 +62,6 @@ Created by [Amanda D](https://github.com/amandaduuaarte)
 
 ![desktop-preview](https://github.com/amandaduuaarte/multi-step-form/assets/89158507/e2fa7884-da46-482c-81d0-f88b11f201ac)
 The project was based on the Frontend Mentor challenge.
+## StoryBook documentation
+![image](https://github.com/amandaduuaarte/multi-step-form/assets/89158507/d8329fbf-8b8b-4493-b601-eb133c805755)
+
