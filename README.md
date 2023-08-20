@@ -40,13 +40,18 @@ A simple form consisting of multiple components and divided into several complet
 - run `yarn start`
 ...
   
-## How to Get Started
+## How to Get Started Aplication
 
 1. Clone this repository: `git clone https://github.com/amandaduuaarte/multi-step-form.git`
 2. Navigate to the project directory: `cd multi-step-form`
 3. Install dependencies: `yarn`
 4. Start the development server: `yarn start`
 5. Access the app in your browser: `http://localhost:3000`
+
+## How to Get Started Storybook
+
+1. Start the development server: `yarn storybook`
+2. Access the app in your browser: `http://localhost:6006/`
 
 ## How to Contribute
 
