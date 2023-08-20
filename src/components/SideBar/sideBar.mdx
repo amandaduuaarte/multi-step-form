@@ -1,0 +1,26 @@
+{/* SideBar.mdx */}
+
+import { Canvas, Meta } from '@storybook/blocks';
+
+import * as SideBar from './sideBar.stories';
+
+<Meta of={SideBar} />
+
+# SideBar
+Component created with the responsibility of informing the user about which step of the form he is, so basically he can the title that each step has and its status.
+When you are in a certain phase the style changes a little.
+
+## Usage
+     `import { SideBar } from 'SideBar-component';`
+
+    `<SideBar status={1}/>`
+
+
+<Canvas of={SideBar.Step1} />
+
+
+{/* Guideline.mdx */}
+
+By dynamically indicating validation errors, the component guides users toward correct input, helping them understand what needs to be adjusted to proceed. This feedback loop ensures that the user's data aligns with the expected standards, preventing potential issues further down the line.
+
+Incorporating these two variations within the input component enhances the user experience by addressing both straightforward input needs and more complex validation scenarios. This flexibility allows the component to seamlessly adapt to a wide range of use cases, ultimately contributing to a more intuitive and user-friendly interface.
